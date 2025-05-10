@@ -1,6 +1,13 @@
 ## 🚀 Como iniciar o projeto - Docker
+```
 docker-compose build --no-cache --parallel
+```
+```
+docker-compose up -d
+```
+```
 docker-compose up --build -d
+```
 
 ## 🚀 health
 http://localhost:8080/health
