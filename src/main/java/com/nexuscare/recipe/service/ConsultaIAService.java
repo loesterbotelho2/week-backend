@@ -6,4 +6,5 @@ import com.nexuscare.recipe.model.ReceitaMedicamentos;
 
 public interface ConsultaIAService {
 	List<ReceitaMedicamentos> consultarIA(String observacoes);
+	String gerarPrompt(String observacoes);
 }

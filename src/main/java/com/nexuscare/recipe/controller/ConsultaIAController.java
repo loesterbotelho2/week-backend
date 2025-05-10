@@ -21,7 +21,9 @@ public class ConsultaIAController {
 
     @PostMapping
     public ResponseEntity<List<ReceitaMedicamentos>> consultar(@RequestBody String observacoes) {
-        List<ReceitaMedicamentos> resultados = consultaIAService.consultarIA(observacoes);
+    	
+    	String prompt = consultaIAService.gerarPrompt(observacoes);
+        List<ReceitaMedicamentos> resultados = consultaIAService.consultarIA(prompt);
         return ResponseEntity.ok(resultados);
     }
 }
