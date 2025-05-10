@@ -25,3 +25,10 @@ com.nexuscare.recipe
 ## 📁 Configurar variável de ambiente do eclipse
 
 ![Descrição da imagem](imgs/env_eclipse.png)
+
+## 🚀 Exemplo
+
+Infecções respiratórias e bronquite bacteriana
+doença relampago x10 2040
+
+![Descrição da imagem](imgs/swagger-exemplo.png)

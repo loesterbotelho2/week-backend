@@ -57,16 +57,7 @@ public class ConsultaIAServiceImpl implements ConsultaIAService {
             
             @SuppressWarnings("rawtypes")
 			Map resposta = response.block();
-           
-/*
-            String textoResposta = ((Map)((List)((Map) resposta
-                    .get("candidates"))
-                    .get(0))
-                    .get("content"))
-                    .get("parts")
-                    .toString();
-*/            
-            
+         
 	        List<Map<String, Object>> candidates = (List<Map<String, Object>>) resposta.get("candidates");
 	        
 	        Map<String, Object> primeiroCandidato = candidates.get(0);
@@ -77,8 +68,10 @@ public class ConsultaIAServiceImpl implements ConsultaIAService {
 	        List<Map<String, Object>> parts = (List<Map<String, Object>>) content.get("parts");
 	        String textoResposta = parts.get(0).get("text").toString();
 
+	        String limpo = textoResposta.replace("```json", "").replace("```", "").trim();
+	        
 	        try {
-	        	lista = objectMapper.readValue(textoResposta, new TypeReference<List<NomeMedicamentos>>() {});
+	        	lista = objectMapper.readValue(limpo, new TypeReference<List<NomeMedicamentos>>() {});
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	            return new ArrayList<>();
@@ -100,7 +93,23 @@ public class ConsultaIAServiceImpl implements ConsultaIAService {
 	@Override
 	public String gerarPrompt(String observacoes) {
 		String prompt = "";
-		prompt += observacoes;
+		
+
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("Por favor, gere uma receita médica fictícia em formato JSON para uma pessoa com diagnóstico de \""+observacoes+"\", apresentando sintomas como pulmão com chiado, batimentos acelerados e fraqueza. Caso o paciente tenha alguma alergia medicamentosa, ajuste os medicamentos conforme necessário. Se não encontrar medicamentos apropriados para o caso, retorne um JSON vazio. A resposta deve conter apenas o JSON, sem adicionar nenhum texto, explicação ou delimitadores como ```json ou ```. Use exatamente o formato abaixo:");
+			
+		sb.append("\n");
+		
+		sb.append("[");
+		sb.append("{\"receita_id\":0,\"medicamento_id\":1,\"dosagem\":\"10mg\",\"quantidade\":5,\"instrucoes\":\"Tomar 1 comprimido por dia, de manhã\",\"id\":\"f695\"},");
+		sb.append("{\"receita_id\":0,\"medicamento_id\":2,\"dosagem\":\"500mg\",\"quantidade\":10,\"instrucoes\":\"Tomar 1 comprimido a cada 12 horas por 7 dias\",\"id\":\"edae\"},");
+		sb.append("{\"receita_id\":0,\"medicamento_id\":3,\"dosagem\":\"200mcg\",\"quantidade\":6,\"instrucoes\":\"Inalar 2 jatos pela manhã e à noite\",\"id\":\"b1b1\"},");
+		sb.append("{\"receita_id\":0,\"medicamento_id\":4,\"dosagem\":\"100mcg\",\"quantidade\":3,\"instrucoes\":\"Inalar 2 jatos em caso de crise de asma\",\"id\":\"177c\"},");
+		sb.append("{\"receita_id\":0,\"medicamento_id\":5,\"dosagem\":\"200mcg\",\"quantidade\":6,\"instrucoes\":\"Inalar 2 jatos conforme necessidade para crises asmáticas\",\"id\":\"8f62\"}");
+		sb.append("]");
+
+		prompt = sb.toString();
 
 		return prompt;
 	}
