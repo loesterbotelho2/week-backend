@@ -20,9 +20,6 @@ services:
         interval: 30s
         timeout: 10s
         retries: 5
-      networks:
-        loester-network:
-          ipv4_address: 192.168.12.110
       volumes:
         - backend_data:/app/data
 
