@@ -1,8 +1,8 @@
 package com.nexuscare.recipe.service.impl;
 
 import com.nexuscare.recipe.model.ReceitaMedicamentos;
-import com.nexuscare.recipe.repository.ReceitaMedicamentoRepository;
-import com.nexuscare.recipe.service.ReceitaMedicamentoService;
+import com.nexuscare.recipe.repository.ReceitaMedicamentosRepository;
+import com.nexuscare.recipe.service.ReceitaMedicamentosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ReceitaMedicamentoServiceImpl implements ReceitaMedicamentoService {
+public class ReceitaMedicamentosServiceImpl implements ReceitaMedicamentosService {
 
-    private final ReceitaMedicamentoRepository ReceitaMedicamentoRepository;
+    private final ReceitaMedicamentosRepository ReceitaMedicamentoRepository;
 
     @Autowired
-    public ReceitaMedicamentoServiceImpl(ReceitaMedicamentoRepository ReceitaMedicamentoRepository) {
+    public ReceitaMedicamentosServiceImpl(ReceitaMedicamentosRepository ReceitaMedicamentoRepository) {
         this.ReceitaMedicamentoRepository = ReceitaMedicamentoRepository;
     }
 

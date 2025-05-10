@@ -1,8 +1,8 @@
 package com.nexuscare.recipe.service.impl;
 
-import com.nexuscare.recipe.model.NomeMedicamento;
-import com.nexuscare.recipe.repository.NomeMedicamentoRepository;
-import com.nexuscare.recipe.service.NomeMedicamentoService;
+import com.nexuscare.recipe.model.NomeMedicamentos;
+import com.nexuscare.recipe.repository.NomeMedicamentosRepository;
+import com.nexuscare.recipe.service.NomeMedicamentosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,32 +10,32 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class NomeMedicamentoServiceImpl implements NomeMedicamentoService {
+public class NomeMedicamentosServiceImpl implements NomeMedicamentosService {
 
-    private final NomeMedicamentoRepository NomeMedicamentoRepository;
+    private final NomeMedicamentosRepository NomeMedicamentoRepository;
 
     @Autowired
-    public NomeMedicamentoServiceImpl(NomeMedicamentoRepository NomeMedicamentoRepository) {
+    public NomeMedicamentosServiceImpl(NomeMedicamentosRepository NomeMedicamentoRepository) {
         this.NomeMedicamentoRepository = NomeMedicamentoRepository;
     }
 
     @Override
-    public NomeMedicamento save(NomeMedicamento NomeMedicamento) {
+    public NomeMedicamentos save(NomeMedicamentos NomeMedicamento) {
         return NomeMedicamentoRepository.save(NomeMedicamento);
     }
 
     @Override
-    public Optional<NomeMedicamento> findById(Long id) {
+    public Optional<NomeMedicamentos> findById(Long id) {
         return NomeMedicamentoRepository.findById(id);
     }
 
     @Override
-    public List<NomeMedicamento> findAll() {
+    public List<NomeMedicamentos> findAll() {
         return NomeMedicamentoRepository.findAll();
     }
 
     @Override
-    public NomeMedicamento update(Long id, NomeMedicamento NomeMedicamento) {
+    public NomeMedicamentos update(Long id, NomeMedicamentos NomeMedicamento) {
         if (NomeMedicamentoRepository.existsById(id)) {
             NomeMedicamento.setId(id);
             return NomeMedicamentoRepository.save(NomeMedicamento);

@@ -4,7 +4,7 @@ import com.nexuscare.recipe.model.ReceitaMedicamentos;
 import java.util.List;
 import java.util.Optional;
 
-public interface ReceitaMedicamentoService {
+public interface ReceitaMedicamentosService {
     ReceitaMedicamentos save(ReceitaMedicamentos receitaMedicamentos);
     Optional<ReceitaMedicamentos> findById(Long id);
     List<ReceitaMedicamentos> findAll();

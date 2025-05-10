@@ -1,7 +1,7 @@
 package com.nexuscare.recipe.controller;
 
 import com.nexuscare.recipe.model.ReceitaMedicamentos;
-import com.nexuscare.recipe.service.ReceitaMedicamentoService;
+import com.nexuscare.recipe.service.ReceitaMedicamentosService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +12,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/receita-medicamentos")
-public class ReceitaMedicamentoController {
+public class ReceitaMedicamentosController {
 
-    private final ReceitaMedicamentoService receitaMedicamentoService;
+    private final ReceitaMedicamentosService receitaMedicamentoService;
     
     @Autowired
-    public ReceitaMedicamentoController(ReceitaMedicamentoService receitaMedicamentoService) {
+    public ReceitaMedicamentosController(ReceitaMedicamentosService receitaMedicamentoService) {
         this.receitaMedicamentoService = receitaMedicamentoService;
     }
     

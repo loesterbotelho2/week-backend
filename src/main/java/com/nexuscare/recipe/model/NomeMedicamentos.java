@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "nome_medicamentos")
-public class NomeMedicamento {
+public class NomeMedicamentos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,10 @@ public class NomeMedicamento {
     @Column(name = "para_que_serve", length = 255)
     private String paraQueServe;
 
-    public NomeMedicamento() {
+    public NomeMedicamentos() {
     }
 
-    public NomeMedicamento(Long id, String nomeComercial, String principioAtivo, String paraQueServe) {
+    public NomeMedicamentos(Long id, String nomeComercial, String principioAtivo, String paraQueServe) {
         this.id = id;
         this.nomeComercial = nomeComercial;
         this.principioAtivo = principioAtivo;
@@ -80,7 +80,7 @@ public class NomeMedicamento {
             return true;
         if (obj == null || getClass() != obj.getClass())
             return false;
-        NomeMedicamento other = (NomeMedicamento) obj;
+        NomeMedicamentos other = (NomeMedicamentos) obj;
         return Objects.equals(id, other.id);
     }
 }

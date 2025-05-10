@@ -18,7 +18,7 @@ public class ReceitaMedicamentos {
 
     @ManyToOne
     @JoinColumn(name = "medicamento_id", nullable = false)
-    private NomeMedicamento medicamento;
+    private NomeMedicamentos medicamento;
 
     private String dosagem;
 
@@ -30,7 +30,7 @@ public class ReceitaMedicamentos {
     public ReceitaMedicamentos() {
     }
 
-    public ReceitaMedicamentos(Long id, Receita receita, NomeMedicamento medicamento, String dosagem, Integer quantidade, String instrucoes) {
+    public ReceitaMedicamentos(Long id, Receita receita, NomeMedicamentos medicamento, String dosagem, Integer quantidade, String instrucoes) {
         this.id = id;
         this.receita = receita;
         this.medicamento = medicamento;
@@ -55,11 +55,11 @@ public class ReceitaMedicamentos {
         this.receita = receita;
     }
 
-    public NomeMedicamento getMedicamento() {
+    public NomeMedicamentos getMedicamento() {
         return medicamento;
     }
 
-    public void setMedicamento(NomeMedicamento medicamento) {
+    public void setMedicamento(NomeMedicamentos medicamento) {
         this.medicamento = medicamento;
     }
 
