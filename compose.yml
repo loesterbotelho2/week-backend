@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
     backend:
-      image: loesterbotelho/backend:v1
+      image: backend:v1
       container_name: backend
       restart: always
       build:
