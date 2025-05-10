@@ -1,7 +1,10 @@
 ## 🚀 Como iniciar o projeto - Docker
 docker-compose up --build -d
 
-## 🚀 swagger (desativado no pom.xml)
+## 🚀 health
+http://localhost:8080/health
+
+## 🚀 swagger
 http://localhost:8080/swagger-ui/index.html
 
 ## 📁 Estrutura de Pacotes Recomendada
