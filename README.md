@@ -18,3 +18,7 @@ com.nexuscare.recipe
 | `service`      | Camada de regras de negócio (serviços)                     |
 | `mapper`       | Conversores entre `model` e `dto` (usando MapStruct, etc.) |
 | `config`       | Configurações da aplicação (Swagger, CORS, Security, etc.) |
+
+## 📁 Configurar variável de ambiente do eclipse
+
+![Descrição da imagem](imgs/env_eclipse.png)
