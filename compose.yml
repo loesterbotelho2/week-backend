@@ -10,7 +10,7 @@ services:
         dockerfile: backend.dockerfile
       environment:
         - SPRING_PROFILES_ACTIVE=prod   
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/postgres
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://34.252.79.7:5432/postgres
         - SPRING_DATASOURCE_USERNAME=postgres
         - SPRING_DATASOURCE_PASSWORD=PA@password
       ports:
