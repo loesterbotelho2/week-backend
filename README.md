@@ -1,4 +1,5 @@
 ## 🚀 Como iniciar o projeto - Docker
+docker-compose build --no-cache --parallel
 docker-compose up --build -d
 
 ## 🚀 health
