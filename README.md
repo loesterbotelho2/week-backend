@@ -8,6 +8,7 @@ docker-compose up -d
 ```
 docker-compose up --build -d
 ```
+docker-compose down --volumes --remove-orphans
 
 ## 🚀 health
 http://localhost:8080/health
